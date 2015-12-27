@@ -13,4 +13,16 @@ class TestCalculator < Minitest::Test
   def test_subtraction
     assert_equal 0, @calc.subtract(2, 2)
   end
+
+  def test_multiplication
+    assert_equal 9, @calc.multiply(3, 3)
+  end
+
+  def test_multiplication
+    assert_equal 9, @calc.multiply(3, 3)
+  end
+
+  def test_division
+    assert_equal 2, @calc.divide(4, 2)
+  end
 end
