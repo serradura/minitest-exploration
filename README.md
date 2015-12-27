@@ -2,5 +2,5 @@
 
 # How run the test suite
 ```
-ruby -Ilib:test test/test_*.rb
+rake test
 ```
