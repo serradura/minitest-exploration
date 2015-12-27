@@ -8,8 +8,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  minitest
-  shoulda-context
+  minitest (~> 5.8.3)
+  shoulda-context (~> 1.2.1)
 
 BUNDLED WITH
    1.11.2
