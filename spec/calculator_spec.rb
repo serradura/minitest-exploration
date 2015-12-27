@@ -1,44 +1,54 @@
-require 'minitest/autorun'
+require 'spec_helper'
 require 'calculator'
 
 describe Calculator do
-  before do
-    @calc = Calculator.new
-  end
+  subject { Calculator.new }
 
-  describe "#addition" do
+  describe 'addition' do
     let(:expected) { 4 }
 
-    it "must add the values" do
-      @calc.add(2, 2).must_equal expected
-      @calc.add(4, 2).wont_equal expected
+    it 'add two numbers properly' do
+      subject.add(2, 2).must_equal expected
+    end
+
+    it 'not add incorrectly' do
+      subject.add(4, 2).wont_equal expected
     end
   end
 
-  describe "#subtraction" do
+  describe 'subtraction' do
     let(:expected) { 0 }
 
-    it "must subtract the values" do
-      @calc.subtract(2, 2).must_equal expected
-      @calc.subtract(4, 2).wont_equal expected
+    it 'subtract two numbers properly' do
+      subject.subtract(2, 2).must_equal expected
+    end
+
+    it 'not subtract incorrectly' do
+      subject.subtract(4, 2).wont_equal expected
     end
   end
 
-  describe "#multiplication" do
+  describe 'multiplication' do
     let(:expected) { 4 }
 
-    it "must multiply the values" do
-      @calc.multiply(2, 2).must_equal expected
-      @calc.multiply(4, 2).wont_equal expected
+    it 'multiply two numbers properly' do
+      subject.multiply(2, 2).must_equal expected
+    end
+
+    it 'not multiply incorrectly' do
+      subject.multiply(4, 2).wont_equal expected
     end
   end
 
-  describe "#division" do
+  describe 'division' do
     let(:expected) { 1 }
 
-    it "must divide the values" do
-      @calc.divide(2, 2).must_equal expected
-      @calc.divide(4, 2).wont_equal expected
+    it 'divide two numbers properly' do
+      subject.divide(2, 2).must_equal expected
+    end
+
+    it 'not divide incorrectly' do
+      subject.divide(4, 2).wont_equal expected
     end
   end
 end
