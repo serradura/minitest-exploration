@@ -7,22 +7,30 @@ class TestCalculator < Minitest::Test
   end
 
   def test_addition
-    assert_equal 4, @calc.add(2, 2)
+    expected = 4
+
+    assert_equal expected, @calc.add(2, 2)
+    refute_equal expected, @calc.add(4, 2)
   end
 
   def test_subtraction
-    assert_equal 0, @calc.subtract(2, 2)
+    expected = 0
+
+    assert_equal expected, @calc.subtract(2, 2)
+    refute_equal expected, @calc.subtract(4, 2)
   end
 
   def test_multiplication
-    assert_equal 9, @calc.multiply(3, 3)
-  end
+    expected = 4
 
-  def test_multiplication
-    assert_equal 9, @calc.multiply(3, 3)
+    assert_equal expected, @calc.multiply(2, 2)
+    refute_equal expected, @calc.multiply(4, 2)
   end
 
   def test_division
-    assert_equal 2, @calc.divide(4, 2)
+    expected = 1
+
+    assert_equal expected, @calc.divide(2, 2)
+    refute_equal expected, @calc.divide(4, 2)
   end
 end
