@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'calculator'
+require 'calculator/basic_operations'
 
-describe Calculator do
-  subject { Calculator.new }
+describe Calculator::BasicOperations do
+  subject { Calculator::BasicOperations.new }
 
   describe 'addition' do
     let(:expected) { 4 }

@@ -1,10 +1,10 @@
 require 'test_helper'
-require 'calculator'
+require 'calculator/basic_operations'
 
-class TestCalculatorWithShoulda < Minitest::Test
+class Calculator::TestBasicOperationsWithShoulda < Minitest::Test
   context 'a calculator' do
     setup do # notice the difference
-      @calc = Calculator.new
+      @calc = Calculator::BasicOperations.new
     end
 
     should 'add two numbers properly' do

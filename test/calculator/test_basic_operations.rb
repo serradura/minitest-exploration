@@ -1,9 +1,9 @@
 require 'test_helper'
-require 'calculator'
+require 'calculator/basic_operations'
 
-class TestCalculator < Minitest::Test
+class Calculator::TestBasicOperations < Minitest::Test
   def setup
-    @calc = Calculator.new
+    @calc = Calculator::BasicOperations.new
   end
 
   def test_addition

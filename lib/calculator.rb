@@ -1,17 +1,4 @@
-class Calculator
-  def add(a, b)
-    return a + b
-  end
+require 'calculator/basic_operations'
 
-  def subtract(a, b)
-    return a - b
-  end
-
-  def multiply(a, b)
-    return a * b
-  end
-
-  def divide(a, b)
-    return a / b
-  end
+module Calculator
 end
