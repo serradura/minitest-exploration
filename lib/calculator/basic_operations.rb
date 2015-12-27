@@ -1,5 +1,9 @@
+require 'singleton'
+
 module Calculator
   class BasicOperations
+    include Singleton
+
     def add(a, b)
       return a + b
     end

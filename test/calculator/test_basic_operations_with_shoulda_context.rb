@@ -4,7 +4,7 @@ require 'calculator/basic_operations'
 class Calculator::TestBasicOperationsWithShoulda < Minitest::Test
   context 'a calculator' do
     setup do # notice the difference
-      @calc = Calculator::BasicOperations.new
+      @calc = Calculator::BasicOperations.instance
     end
 
     should 'add two numbers properly' do

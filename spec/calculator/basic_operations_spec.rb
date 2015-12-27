@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'calculator/basic_operations'
 
 describe Calculator::BasicOperations do
-  subject { Calculator::BasicOperations.new }
+  subject { Calculator::BasicOperations.instance }
 
   describe 'addition' do
     let(:expected) { 4 }

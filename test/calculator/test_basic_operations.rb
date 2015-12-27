@@ -3,7 +3,7 @@ require 'calculator/basic_operations'
 
 class Calculator::TestBasicOperations < Minitest::Test
   def setup
-    @calc = Calculator::BasicOperations.new
+    @calc = Calculator::BasicOperations.instance
   end
 
   def test_addition
