@@ -1,7 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.5.0)
+    builder (3.2.2)
     minitest (5.8.3)
+    minitest-reporters (1.1.7)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
+    ruby-progressbar (1.7.5)
     shoulda-context (1.2.1)
 
 PLATFORMS
@@ -9,6 +17,7 @@ PLATFORMS
 
 DEPENDENCIES
   minitest (~> 5.8.3)
+  minitest-reporters (~> 1.1.7)
   shoulda-context (~> 1.2.1)
 
 BUNDLED WITH
