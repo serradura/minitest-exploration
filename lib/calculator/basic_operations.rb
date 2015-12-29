@@ -4,20 +4,20 @@ module Calculator
   class BasicOperations
     include Singleton
 
-    def add(a, b)
-      return a + b
+    def add(num1, num2)
+      return num1 + num2
     end
 
-    def subtract(a, b)
-      return a - b
+    def subtract(num1, num2)
+      return num1 - num2
     end
 
-    def multiply(a, b)
-      return a * b
+    def multiply(num1, num2)
+      return num1 * num2
     end
 
-    def divide(a, b)
-      return a / b
+    def divide(num1, num2)
+      return num1 / num2
     end
   end
 end

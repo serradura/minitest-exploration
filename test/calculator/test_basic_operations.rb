@@ -1,36 +1,49 @@
 require 'test_helper'
 require 'calculator/basic_operations'
 
-class Calculator::TestBasicOperations < Minitest::Test
-  def setup
-    @calc = Calculator::BasicOperations.instance
+class Calculator::TestBasicOperationsWithShoulda < Minitest::Test
+
+  subject { Calculator::BasicOperations.instance }
   end
 
-  def test_addition
-    expected = 4
+  context 'given an addition operation' do
+    should 'add two numbers properly' do
+      assert_equal 4, subject.add(2, 2)
+    end
 
-    assert_equal expected, @calc.add(2, 2)
-    refute_equal expected, @calc.add(4, 2)
+    should 'not add incorrectly' do
+      refute_equal 5, subject.add(2, 2)
+    end
   end
 
-  def test_subtraction
-    expected = 0
+  context 'given a subtraction operation' do
+    should 'subtract two numbers properly' do
+      assert_equal 0, subject.subtract(2, 2)
+    end
 
-    assert_equal expected, @calc.subtract(2, 2)
-    refute_equal expected, @calc.subtract(4, 2)
+    should 'not subtract incorrectly' do
+      refute_equal -1, subject.subtract(2, 2)
+    end
   end
 
-  def test_multiplication
-    expected = 4
+  context 'given a multiplication operation' do
+    should 'multiply two numbers properly' do
+      assert_equal 4, subject.multiply(2, 2)
+    end
 
-    assert_equal expected, @calc.multiply(2, 2)
-    refute_equal expected, @calc.multiply(4, 2)
+    should 'not multiply incorrectly' do
+      refute_equal 5, subject.multiply(2, 2)
+    end
   end
 
-  def test_division
-    expected = 1
+  context 'given a division operation' do
+    should 'divide two numbers properly' do
+      assert_equal 1, subject.divide(2, 2)
+    end
 
-    assert_equal expected, @calc.divide(2, 2)
-    refute_equal expected, @calc.divide(4, 2)
+    should 'not divide incorrectly' do
+      refute_equal 0, subject.divide(2, 2)
+    end
   end
+
 end
