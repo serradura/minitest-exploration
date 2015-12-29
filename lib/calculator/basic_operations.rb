@@ -4,6 +4,16 @@ module Calculator
   class BasicOperations
     include Singleton
 
+    NAMES = [:add, :subtract, :multiply, :divide].freeze
+
+    def self.names
+      return instance.names
+    end
+
+    def names
+      return NAMES
+    end
+
     def add(num1, num2)
       return num1 + num2
     end

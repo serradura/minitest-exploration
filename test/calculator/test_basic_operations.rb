@@ -4,6 +4,16 @@ require 'calculator/basic_operations'
 class Calculator::TestBasicOperationsWithShoulda < Minitest::Test
 
   subject { Calculator::BasicOperations.instance }
+
+  context 'operation names' do
+    setup do
+      @names = [:divide, :multiply, :subtract, :add]
+    end
+
+    should 'list all valid names' do
+      assert_same_elements @names, Calculator::BasicOperations.names
+      assert_same_elements @names, subject.names
+    end
   end
 
   context 'given an addition operation' do
