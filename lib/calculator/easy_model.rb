@@ -7,12 +7,10 @@ module Calculator
       @operations = BasicOperations.instance
     end
 
-    def add(num1, num2)
-      call(:add, num1, num2)
-    end
-
-    def subtract(num1, num2)
-      call(:subtract, num1, num2)
+    BasicOperations.names.each do |operation_name|
+      define_method(operation_name) { |num1, num2|
+        call(operation_name, num1, num2)
+      }
     end
 
     private

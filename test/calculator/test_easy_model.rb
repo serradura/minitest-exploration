@@ -36,4 +36,28 @@ class Calculator::TestEasyModel < Minitest::Test
       assert_equal @history_entry, subject.history.last
     end
   end
+
+  context 'given a multiplication operation' do
+    setup do
+      @history_entry = build_history_entry(:multiply, 3, 2, 6)
+    end
+
+    should 'saves the operation history' do
+      subject.multiply(@history_entry[:num1], @history_entry[:num2])
+
+      assert_equal @history_entry, subject.history.last
+    end
+  end
+
+  context 'given a division operation' do
+    setup do
+      @history_entry = build_history_entry(:divide, 3.0, 2, 1.5)
+    end
+
+    should 'saves the operation history' do
+      subject.divide(@history_entry[:num1], @history_entry[:num2])
+
+      assert_equal @history_entry, subject.history.last
+    end
+  end
 end
