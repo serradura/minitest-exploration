@@ -8,12 +8,22 @@ module Calculator
     end
 
     def add(num1, num2)
-      @operations.add(num1, num2).tap do |result|
-        save_history(:add, num1, num2, result)
-      end
+      call(:add, num1, num2)
+    end
+
+    def subtract(num1, num2)
+      call(:subtract, num1, num2)
     end
 
     private
+
+    def call(operation_name, num1, num2)
+      result = @operations.public_send(operation_name, num1, num2)
+
+      save_history(operation_name, num1, num2, result)
+
+      result
+    end
 
     def save_history(operation, num1, num2, result)
       history.push operation: operation,
