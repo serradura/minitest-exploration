@@ -14,6 +14,27 @@ class Calculator::TestOperationsHistory < Minitest::Test
       assert_equal expected, subject.last
     end
 
+    context 'when fail some validation' do
+      should 'raises an error when the number of args is wrong' do
+        assert_raises(ArgumentError) {
+          subject.save(:add, 1)
+        }
+      end
+
+      should 'raises an error when the operation arg is invalid' do
+        assert_raises(ArgumentError) { subject.save(nil, 1, 1, 2) }
+        assert_raises(ArgumentError) { subject.save('', 1, 1, 2) }
+        assert_raises(ArgumentError) { subject.save(''.to_sym, 1, 1, 2) }
+        assert_raises(ArgumentError) { subject.save(:foo, 1, 1, 2) }
+      end
+
+      should 'raises an error when the numbers are invalid' do
+        assert_raises(ArgumentError) { subject.save(:add, nil, nil, nil) }
+        assert_raises(ArgumentError) { subject.save(:add, '', '', '') }
+        assert_raises(ArgumentError) { subject.save(:add, '1', '1', '2') }
+      end
+    end
+
   end
 
 end
