@@ -16,6 +16,13 @@ class Calculator::TestBasicOperationsWithShoulda < Minitest::Test
     end
   end
 
+  context 'given an operation name' do
+    should 'verify if its valid' do
+      assert Calculator::BasicOperations.valid?(:add)
+      refute Calculator::BasicOperations.valid?(:foo)
+    end
+  end
+
   context 'given an addition operation' do
     should 'add two numbers properly' do
       assert_equal 4, subject.add(2, 2)

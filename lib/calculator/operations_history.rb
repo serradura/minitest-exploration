@@ -20,9 +20,7 @@ module Calculator
     private
 
     def validate_operation!(operation)
-      return operation if BasicOperations.names.include?(operation)
-
-      raise ArgumentError
+      raise ArgumentError unless BasicOperations.valid?(operation)
     end
 
     def validate_numbers!(args)

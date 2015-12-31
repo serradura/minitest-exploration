@@ -10,6 +10,10 @@ module Calculator
       return instance.names
     end
 
+    def self.valid?(name)
+      names.include? name
+    end
+
     def names
       return NAMES
     end
