@@ -3,7 +3,7 @@ module Calculator
     attr_reader :history
 
     def initialize
-      @history    = []
+      @history    = OperationsHistory.new
       @operations = BasicOperations.instance
     end
 
@@ -15,19 +15,12 @@ module Calculator
 
     private
 
-    def call(operation_name, num1, num2)
-      result = @operations.public_send(operation_name, num1, num2)
+    def call(operation, num1, num2)
+      result = @operations.public_send(operation, num1, num2)
 
-      save_history(operation_name, num1, num2, result)
+      @history.save(operation, num1, num2, result)
 
       result
-    end
-
-    def save_history(operation, num1, num2, result)
-      history.push operation: operation,
-                   num1: num1,
-                   num2: num2,
-                   result: result
     end
   end
 end
