@@ -4,5 +4,5 @@ require 'calculator/yaml_history_storage'
 require 'calculator/easy_model'
 
 module Calculator
-  STAGE = '3'
+  STAGE = '4'
 end
