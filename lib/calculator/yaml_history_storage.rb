@@ -26,7 +26,9 @@ module Calculator
     private
 
     def persist_file(data)
-      File.open(FILE_PATH, 'w') { |f| f.puts data }
+      file = File.open(FILE_PATH, 'w')
+      file.puts(data)
+      file.close
     end
   end
 end
