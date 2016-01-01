@@ -2,8 +2,8 @@ module Calculator
   class EasyModel
     attr_reader :history
 
-    def initialize
-      @history    = OperationsHistory.new
+    def initialize(operations_history=OperationsHistory.new)
+      @history    = operations_history
       @operations = BasicOperations.instance
     end
 
