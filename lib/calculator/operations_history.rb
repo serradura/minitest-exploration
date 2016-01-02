@@ -15,12 +15,10 @@ module Calculator
     end
 
     def save(*args)
-      validate! args
+      validate_operation! args.first
+      validate_numbers! args[1..4]
 
-      changed
-      @memo << build_record(*args)
-
-      notify_observers(@memo)
+      push(args)
     end
 
     private
@@ -31,9 +29,10 @@ module Calculator
       end
     end
 
-    def validate!(args)
-      validate_operation! args.first
-      validate_numbers! args[1..4]
+    def push(args)
+      changed
+      @memo << build_record(*args)
+      notify_observers(@memo)
     end
 
     def validate_operation!(operation)
