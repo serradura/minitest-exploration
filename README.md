@@ -1,20 +1,9 @@
 # Project to explore the Minitest library
+Based on posts:
+- [Make Your Ruby Tests Cleaner with Minitest and Shoulda](http://www.sitepoint.com/minitest-shoulda)
+- [Top 8 tools for Ruby on Rails code optimization and cleanup]( https://infinum.co/the-capsized-eight/articles/top-8-tools-for-ruby-on-rails-code-optimization-and-cleanup)
 
-Based on post http://www.sitepoint.com/minitest-shoulda
-
-# How run the test suite
-```sh
-rake test
-# Or
-autotest
-```
-
-# How run the benchmarks
-```sh
-rake bench
-```
-
-# Usage
+## Usage
 ```ruby
 # Load in the console (IRB)
 # $ irb -I lib -r calculator
@@ -54,4 +43,34 @@ Shell.new.cat Calculator::YAMLHistoryStorage::FILE_PATH
 #   :num2: 2
 #   :result: 3
 
+```
+
+## How run the test suite
+```sh
+rake test
+# Or
+autotest
+```
+
+## How run the benchmarks
+```sh
+rake bench
+```
+
+## Code Quality tools
+```sh
+# https://github.com/colszowka/simplecov/blob/master/README.md
+rake test
+
+open tmp/coverage/index.html
+
+# https://github.com/whitesmith/rubycritic/blob/master/README.md
+rubycritic lib -p tmp/rubycritic
+
+open tmp/rubycritic/overview.html
+
+# https://github.com/makaroni4/sandi_meter/blob/master/README.md
+sandi_meter -p lib -o tmp/sandi_meter -g -q
+
+open tmp/sandi_meter/index.html
 ```
