@@ -1,3 +1,5 @@
+require 'simplecov'
+
 require 'minitest/autorun'
 require 'minitest/reporters'
 require 'shoulda/context'
