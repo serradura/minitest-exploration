@@ -6,19 +6,17 @@ class Calculator::TestOperationsHistory < Minitest::Test
 
   context 'when receives an observer' do
     setup do
-      @file = Minitest::Mock.new
-      @file.expect(:puts, nil, ["---\n- :operation: :add\n  :num1: 1\n  :num2: 1\n  :result: 2\n"])
-      @file.expect(:close, nil)
+      @observer = Minitest::Mock.new
+      @observer.expect(:hash, Object.new.hash)
+      @observer.expect(:update, nil, [Array])
     end
 
-    subject { Calculator::OperationsHistory.new(Calculator::YAMLHistoryStorage.new) }
+    subject { Calculator::OperationsHistory.new(@observer) }
 
     should 'execute it after save an entry' do
-      File.stub(:open, @file) do
-        subject.save(:add, 1, 1, 2)
+      subject.save(:add, 1, 1, 2)
 
-        @file.verify
-      end
+      @observer.verify
     end
   end
 
