@@ -22,6 +22,10 @@ module Calculator
       persist_file data
     end
 
+    def filename
+      @filename ||= File.join(file_path, FILE_NAME)
+    end
+
     def data
       serializer.load_file(filename) || EMPTY_DATA
     rescue Errno::ENOENT
@@ -32,10 +36,6 @@ module Calculator
 
     def serializer
       Psych
-    end
-
-    def filename
-      @filename ||= File.join(file_path, FILE_NAME)
     end
 
     def persist_file(data)

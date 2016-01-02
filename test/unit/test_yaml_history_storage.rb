@@ -24,6 +24,13 @@ module Calculator
       end
     end
 
+    context 'storage filename' do
+      should 'be valid' do
+        assert_includes subject.filename, subject.file_path
+        assert_includes subject.filename, YAMLHistoryStorage::FILE_NAME
+      end
+    end
+
     context 'update storage data' do
       setup do
         @file = Minitest::Mock.new
