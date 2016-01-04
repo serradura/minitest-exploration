@@ -3,6 +3,21 @@ Based on posts:
 - [Make Your Ruby Tests Cleaner with Minitest and Shoulda](http://www.sitepoint.com/minitest-shoulda)
 - [Top 8 tools for Ruby on Rails code optimization and cleanup]( https://infinum.co/the-capsized-eight/articles/top-8-tools-for-ruby-on-rails-code-optimization-and-cleanup)
 
+## Installation
+```sh
+  # Install ruby 2.3.0. e.g:
+  # rvm install 2.3.0
+
+  # Enter in the project folder. e.g:
+  # cd ./minitest-exploration
+
+  bundle install
+
+  # Execute autotest to verify the test coverage. e.g:
+  # autotest
+  # After execute autotest, open tmp/* to see all the code quality reports.
+```
+
 ## Usage
 ```ruby
 # Load in the console (IRB)

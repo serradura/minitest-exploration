@@ -9,7 +9,7 @@ module Calculator
       setup do
         @storage = YAMLHistoryStorage.new('tmp')
 
-        FileUtils.rm @storage.filename
+        FileUtils.rm(@storage.filename) if File.exist?(@storage.filename)
 
         @history = OperationsHistory.new(@storage)
       end
