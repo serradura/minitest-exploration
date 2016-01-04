@@ -32,7 +32,7 @@ scalc.history.last == storage.data.last
 
 # Verify the operations history file cache
 require 'shell'
-Shell.new.cat Calculator::YAMLHistoryStorage::FILE_PATH
+Shell.new.cat storage.filename
 # => ---
 # - :operation: :add
 #   :num1: 1
