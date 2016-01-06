@@ -1,6 +1,6 @@
 require 'benchmark'
 
-require "calculator/basic_operations"
+require 'calculator/basic_operations'
 
 class OperationsMethodCallBenchmark
   class Base
@@ -29,11 +29,11 @@ class OperationsMethodCallBenchmark
 
   def self.reports
     Benchmark.bm do |x|
-      x.report("defined operation") do
+      x.report('defined operation') do
         @numbers.each { |n| @defined.add(n, n) }
       end
 
-      x.report("dynamic operation") do
+      x.report('dynamic operation') do
         @numbers.each { |n| @dynamic.add(n, n) }
       end
     end

@@ -8,8 +8,8 @@ module Calculator
 
     def_delegator :@memo, :last
 
-    def initialize(observer=nil)
-      @memo = Array.new
+    def initialize(observer = nil)
+      @memo = []
 
       apply_observer(observer)
     end
@@ -24,9 +24,7 @@ module Calculator
     private
 
     def apply_observer(observer)
-      if observer.respond_to? :update
-        self.add_observer(observer)
-      end
+      add_observer(observer) if observer.respond_to? :update
     end
 
     def push(args)
@@ -36,11 +34,11 @@ module Calculator
     end
 
     def validate_operation!(operation)
-      raise ArgumentError unless BasicOperations.valid?(operation)
+      fail ArgumentError unless BasicOperations.valid?(operation)
     end
 
     def validate_numbers!(numbers)
-      raise ArgumentError unless numbers.all? { |number| number.kind_of? Numeric }
+      fail ArgumentError unless numbers.all? { |number| number.is_a? Numeric }
     end
 
     def build_record(operation, num1, num2, result)

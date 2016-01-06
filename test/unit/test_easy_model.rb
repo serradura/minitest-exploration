@@ -3,7 +3,6 @@ require 'calculator'
 
 module Calculator
   class TestEasyModel < Minitest::Test
-
     subject { EasyModel.new }
 
     def build_history_entry(operation, num1, num2, result)
@@ -62,6 +61,5 @@ module Calculator
         assert_equal @history_entry, subject.history.last
       end
     end
-
   end
 end

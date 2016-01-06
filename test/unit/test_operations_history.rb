@@ -3,7 +3,6 @@ require 'calculator'
 
 module Calculator
   class TestOperationsHistory < Minitest::Test
-
     subject { OperationsHistory.new }
 
     context 'when receives an observer' do
@@ -26,16 +25,16 @@ module Calculator
       should 'saves the event' do
         subject.save(:add, 1, 2, 3)
 
-        expected = {operation: :add, num1: 1, num2: 2, result: 3 }
+        expected = { operation: :add, num1: 1, num2: 2, result: 3 }
 
         assert_equal expected, subject.last
       end
 
       context 'when fail some validation' do
         should 'raises an error when the number of args is wrong' do
-          assert_raises(ArgumentError) {
+          assert_raises(ArgumentError) do
             subject.save(:add, 1)
-          }
+          end
         end
 
         should 'raises an error when the operation arg is invalid' do
@@ -52,6 +51,5 @@ module Calculator
         end
       end
     end
-
   end
 end

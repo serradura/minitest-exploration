@@ -4,7 +4,6 @@ require 'fileutils'
 
 module Calculator
   class TestCalculationAndHistoryPersistance < Minitest::Test
-
     context 'a calculator with a persisted history' do
       setup do
         @storage = YAMLHistoryStorage.new('tmp')
@@ -34,6 +33,5 @@ module Calculator
         assert_equal expected, File.read(@storage.filename)
       end
     end
-
   end
 end

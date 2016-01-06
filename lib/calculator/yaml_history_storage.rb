@@ -4,7 +4,7 @@ require 'tmpdir'
 module Calculator
   class YAMLHistoryStorage
     FILE_NAME  = 'calculator_history.yml'.freeze
-    EMPTY_DATA = Array.new.freeze
+    EMPTY_DATA = [].freeze
 
     attr_reader :file_path
 
@@ -12,7 +12,7 @@ module Calculator
       new.data
     end
 
-    def initialize(file_path=nil)
+    def initialize(file_path = nil)
       @file_path = file_path || Dir.tmpdir
     end
 

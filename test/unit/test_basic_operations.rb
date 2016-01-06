@@ -3,7 +3,6 @@ require 'calculator/basic_operations'
 
 module Calculator
   class TestBasicOperationsWithShoulda < Minitest::Test
-
     subject { BasicOperations.instance }
 
     context 'operation names' do
@@ -40,7 +39,7 @@ module Calculator
       end
 
       should 'not subtract incorrectly' do
-        refute_equal -1, subject.subtract(2, 2)
+        refute_equal(-1, subject.subtract(2, 2))
       end
     end
 
@@ -63,6 +62,5 @@ module Calculator
         refute_equal 0, subject.divide(2, 2)
       end
     end
-
   end
 end

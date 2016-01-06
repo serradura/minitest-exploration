@@ -3,7 +3,6 @@ require 'calculator/yaml_history_storage'
 
 module Calculator
   class TestYAMLHistoryStorage < Minitest::Test
-
     subject { YAMLHistoryStorage.new }
 
     context 'storage file path' do
@@ -41,16 +40,15 @@ module Calculator
       should 'persist data in a file' do
         File.stub(:open, @file) do
           subject.update([{
-            operation: :add,
-            num1: 1,
-            num2: 1,
-            result: 2
-          }])
+                           operation: :add,
+                           num1: 1,
+                           num2: 1,
+                           result: 2
+                         }])
 
           @file.verify
         end
       end
     end
-
   end
 end
