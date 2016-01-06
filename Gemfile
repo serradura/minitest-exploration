@@ -9,3 +9,4 @@ gem 'shoulda-context', '~> 1.2.1'
 gem 'simplecov', '~> 0.11.1', require: false
 gem 'rubycritic', '~> 2.4', '>= 2.4.1', require: false
 gem 'sandi_meter', '~> 1.2', require: false
+gem 'rubocop', '~> 0.35.1', require: false

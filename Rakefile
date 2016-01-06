@@ -1,4 +1,5 @@
 require 'rake/testtask'
+require 'rubocop/rake_task'
 
 Rake::TestTask.new do |task|
   task.libs << %w(test lib tmp)
@@ -13,3 +14,5 @@ Rake::TestTask.new do |task|
   task.name = 'bench'
   task.description = 'Run benchmarks'
 end
+
+RuboCop::RakeTask.new
