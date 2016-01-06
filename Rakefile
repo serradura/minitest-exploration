@@ -16,3 +16,15 @@ Rake::TestTask.new do |task|
 end
 
 RuboCop::RakeTask.new
+
+desc 'rubycritic'
+task :rubycritic do
+  system 'rubycritic lib -p tmp/rubycritic'
+end
+
+desc 'sandi_meter'
+task :sandi_meter do
+  system 'sandi_meter -p lib -o tmp/sandi_meter -g -q'
+end
+
+task default: [:rubycritic, :rubocop, :test]

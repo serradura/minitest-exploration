@@ -1,5 +1,7 @@
 source 'https://rubygems.org/'
 
+gem 'rake', '~> 10.4', '>= 10.4.2'
+
 gem 'minitest', '~> 5.8.3'
 gem 'minitest-autotest', '~> 1.0', '>= 1.0.2'
 gem 'minitest-reporters', '~> 1.1.7'

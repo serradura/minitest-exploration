@@ -80,12 +80,12 @@ rake test
 open tmp/coverage/index.html
 
 # https://github.com/whitesmith/rubycritic/blob/master/README.md
-rubycritic lib -p tmp/rubycritic
+rake rubycritic
 
 open tmp/rubycritic/overview.html
 
 # https://github.com/makaroni4/sandi_meter/blob/master/README.md
-sandi_meter -p lib -o tmp/sandi_meter -g -q
+rake sandi_meter
 
 open tmp/sandi_meter/index.html
 ```
